@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+    <bean id="CustomerBean" class="com.coffee.spring.s04.connection.factory.Customer">
+        <property name="lists">
+            <util:list list-class="java.util.ArrayList">
+                <value>liu</value>
+                <value>wei</value>
+                <value>18</value>
+            </util:list>
+        </property>
+        <property name="sets">
+            <util:set set-class="java.util.HashSet">
+                <value>liu1</value>
+                <value>wei1</value>
+                <value>118</value>
+            </util:set>
+        </property>
+        <property name="maps">
+            <util:map map-class="java.util.HashMap">
+                <entry key="key1" value="liumap"/>
+                <entry key="key2" value="weimap"/>
+                <entry key="key3" value="80"/>
+            </util:map>
+        </property>
+    </bean>
+</beans>

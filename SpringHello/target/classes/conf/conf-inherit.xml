@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="baseCustomer" abstract="true">
+    <property name="action" value="liu1"/>
+</bean>
+    <bean id="customer" parent="baseCustomer" class="com.coffee.spring.s04.inherit.Customer">
+        <property name="type" value="1"/>
+        <property name="country" value="nanjing"/>
+    </bean>
+</beans>

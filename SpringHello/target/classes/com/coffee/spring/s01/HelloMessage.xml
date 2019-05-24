@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+  <bean id="HelloWorld" class="com.coffee.spring.s01.HelloWorld"></bean>
+<bean id="HelloChina" class="com.coffee.spring.s01.HelloChina"></bean>
+
+<bean  class="com.coffee.spring.s01.Person">
+ <property name="hellomessage" ref="HelloWorld"></property>
+</bean>
+
+<bean  id="Person1" class="com.coffee.spring.s01.Person">
+ <property name="hellomessage" ref="HelloWorld"></property>
+</bean>
+
+<bean  name="Person2" class="com.coffee.spring.s01.Person">
+ <property name="hellomessage" ref="HelloWorld"></property>
+</bean>
+
+<bean id="Person3" name="Person4" class="com.coffee.spring.s01.Person">
+ <property name="hellomessage" ref="HelloWorld"></property>
+</bean>
+
+<bean  name="Person5;alias1;alias2" class="com.coffee.spring.s01.Person">
+ <property name="hellomessage" ref="HelloWorld"></property>
+</bean>
+
+<bean id="Person6" name="Person7;alias3;alias4" class="com.coffee.spring.s01.Person">
+ <property name="hellomessage" ref="HelloWorld"></property>
+</bean>
+<bean  name="Person8" class="com.coffee.spring.s01.Person">
+ <property name="hellomessage" ref="HelloWorld"></property>
+</bean>
+<alias alias="alias5" name="Person8"></alias>
+</beans>
