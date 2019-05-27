@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="target" class="com.coffee.spring.s07.aop.introduction.UserDaoImpl"/>
+    <bean id="transactionManager" class="com.coffee.spring.s07.aop.introduction.ControllerUserDaoMonitor"/>
+    <bean id="UserDao" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:target-ref="target"
+          p:interceptorNames="transactionManager"
+          p:proxyTargetClass="true"
+          p:proxyInterfaces="com.coffee.spring.s07.aop.advice.introduction.Monitor2,
+         com.coffee.spring.s07.aop.advice.introduction.Monitor"
+    />
+
+</beans>

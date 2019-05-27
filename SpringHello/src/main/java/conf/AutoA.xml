@@ -15,20 +15,14 @@
         <bean id="customer" class="com.coffee.spring.s04.AutoAssembly.Customer" autowire="byName"/> 
          <bean id="person" class="com.coffee.spring.s04.AutoAssembly.Person" primary="false">
          <constructor-arg index="0" value="liuwei"/>
-         <constructor-arg index="1">
-          <value>18</value>
-         </constructor-arg>
+         <constructor-arg index="1" value="18"/>
          </bean>
          <bean id="person1" class="com.coffee.spring.s04.AutoAssembly.Person" primary="true" >
          <constructor-arg index="0" value="weiliu"/>
-         <constructor-arg index="1">
-          <value>8</value>
-         </constructor-arg>
+         <constructor-arg index="1" value="8"/>
          </bean>
          <bean id="person2" class="com.coffee.spring.s04.AutoAssembly.Person" autowire-candidate="false">
          <constructor-arg index="0" value="hahahah"/>
-         <constructor-arg index="1">
-          <value>28</value>
-         </constructor-arg>
+         <constructor-arg index="1" value="28"/>
          </bean>
          </beans>

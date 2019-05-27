@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="Before1" class="com.coffee.spring.s06.aop.advice.BeforeAdvice1"/>
+    <bean id="Before2" class="com.coffee.spring.s06.aop.advice.BeforeAdvice2"/>
+    <bean id="After" class="com.coffee.spring.s06.aop.advice.AfterAdvice1"/>
+    <bean id="Around" class="com.coffee.spring.s06.aop.advice.AroundAdvise"/>
+    <bean id="target" class="com.coffee.spring.s06.aop.advice.StudentImpl"/>
+    <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:target-ref="target" p:singleton="false"
+          p:interceptorNames="Before1,Before2,After,Around">
+        <property name="proxyInterfaces">
+            <list>
+                <value>com.coffee.spring.s06.aop.advice.IStudent</value>
+
+            </list>
+        </property>
+    </bean>
+    <bean id="StudentServer" class="com.coffee.spring.s06.aop.advice.StudentServer"/>
+    <bean id="transactionManager" class="com.coffee.spring.s06.aop.advice.TransactionManager"/>
+    <bean id="ProxyFactory" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:target-ref="StudentServer"
+          p:interceptorNames="transactionManager"
+          p:proxyTargetClass="true"
+    />
+
+
+</beans>
